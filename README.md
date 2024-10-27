@@ -1,2 +1,2 @@
 # Projeto Júpiter: Instrumentação
-Repositório destinado aos códigos usados na Instrumentação do Projeto Júpiter.
+Repositório destinado aos códigos usados na Instrumentação da Propulsão.
