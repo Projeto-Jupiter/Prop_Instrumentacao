@@ -1,0 +1,13 @@
+{
+  "target_overrides": {
+    "*": {
+        "target.printf_lib": "minimal-printf",
+        "platform.minimal-printf-enable-floating-point": true,
+        "platform.minimal-printf-set-floating-point-max-decimals": 2,
+        "target.device_has_add": ["USBDEVICE"],
+        "target.components_add": ["SPIF"],
+        "target.usb_speed": "USE_USB_OTG_FS",
+        "target.usb_interrupt_priority": "1"
+    }
+  }
+}
