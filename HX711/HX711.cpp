@@ -2,6 +2,7 @@
 #include "mbed.h"
 #include <cstdint>
 
+Timer tempolib;
 // Construtor e destrutor
 HX711::HX711() {}
 HX711::~HX711() {}
@@ -32,7 +33,8 @@ void HX711::set_gain(uint8_t gain) {
 
 long HX711::read() {
     // Aguarda até que o HX711 esteja pronto
-    wait_ready();
+    // wait_ready();
+
 
     unsigned long value = 0;
     uint8_t data[3] = {0};

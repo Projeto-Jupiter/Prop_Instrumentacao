@@ -60,6 +60,8 @@ uint32_t lastCellRead = 0;     // Tempo da última leitura da célula de carga
 uint32_t lastPressureRead = 0; // Tempo da última leitura do transdutor
 float escala = -3940;
 Timer globalTimer;
+Timer tempo;
+float tempoleitura;
 
 // Buffer para armazenamento de dados temporário
 struct DataBlock {
@@ -96,6 +98,7 @@ void inicializa_loadcell() {
 
     // Realiza tare para zerar leituras
     loadcell.tare();
+    loadcell.set_gain(128);
     loadcell.set_scale(escala); // Fator de escala inicial
 
     printf("Calibracao concluida. Balanca zerada.\r\n");
@@ -180,6 +183,7 @@ int main(){
     // Inicializa threads
     thread1.start(threadCelulaCarga);
     thread2.start(threadTransdutorPressao);// Thread para ID2 (20 ms)
+
 
     // Inicializa temporizador
     globalTimer.start();
